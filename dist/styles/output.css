@@ -667,6 +667,10 @@ video {
   height: 100vh;
 }
 
+.max-h-72 {
+  max-height: 18rem;
+}
+
 .w-4 {
   width: 1rem;
 }
@@ -681,6 +685,30 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-0 {
+  width: 0px;
+}
+
+.w-0\.5 {
+  width: 0.125rem;
+}
+
+.w-3\/6 {
+  width: 50%;
+}
+
+.w-3 {
+  width: 0.75rem;
+}
+
+.w-1\/2 {
+  width: 50%;
+}
+
+.w-1 {
+  width: 0.25rem;
 }
 
 .border-collapse {
@@ -701,6 +729,14 @@ video {
 
 .justify-center {
   justify-content: center;
+}
+
+.text-wrap {
+  text-wrap: wrap;
+}
+
+.text-pretty {
+  text-wrap: pretty;
 }
 
 .rounded-lg {
@@ -791,6 +827,22 @@ video {
   background-image: url('../img/backgrounds/rain.gif');
 }
 
+.bg-\[url\(\'\.\.\/img\/backgrounds\/r\'\)\] {
+  background-image: url('../img/backgrounds/r');
+}
+
+.bg-\[url\(\'\.\.\/img\/backgrounds\/partly\'\)\] {
+  background-image: url('../img/backgrounds/partly');
+}
+
+.bg-\[url\(\'\.\.\/img\/backgrounds\/partly-cloud\'\)\] {
+  background-image: url('../img/backgrounds/partly-cloud');
+}
+
+.bg-\[url\(\'\.\.\/img\/backgrounds\/partly-cloudy\.jpg\'\)\] {
+  background-image: url('../img/backgrounds/partly-cloudy.jpg');
+}
+
 .p-1 {
   padding: 0.25rem;
 }
@@ -828,6 +880,21 @@ video {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .font-medium {
