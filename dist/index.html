@@ -17,16 +17,18 @@
     <div class="container flex w-screen h-screen">
       <aside class="w-1/2 h-screen flex items-center justify-center">
         <article class="flex flex-col items-center justify-center">
-          <h2 class="" id="city">Istanbul, TR</h2>
+          <h2 class="text-4xl my-5" id="city">Istanbul, TR</h2>
           <h6 id="date">12/21/2023, 3:55:03 PM</h6>
-          <h1 id="temperature">13°C</h1>
-          <img
-            id="weather-icon"
-            src="./img/weather-icons/animated/cloudy-day-3.svg"
-          />
-          <h3 id="condition">Broken clouds</h3>
-          <section id="weather-details">
-            <div>
+          <div class="flex gap-2" id="temp-and-icon">
+            <h1 class="text-4xl my-5" id="temperature">13°C</h1>
+            <img class="shrink-0"
+              id="weather-icon"
+              src="./img/weather-icons/animated/cloudy-day-3.svg"
+            />
+          </div>
+          <h3 class="text-2xl pb-5" id="condition">Broken clouds</h3>
+          <section class="flex flex-col justify-center items-center gap-5" id="weather-details">
+            <div class="flex gap-5">
               <h6>Feels like: 13°</h6>
               <h6>Humidity levels: 76%</h6>
             </div>
@@ -40,7 +42,7 @@
       <!-- Container used for taking users Inputs -->
       <main class="w-1/2 h-screen flex items-center justify-center">
         <article class="flex flex-col items-center justify-center">
-          <h1 class="pd text-4xl my-5">Current Weather</h1>
+          <h1 class="text-4xl my-5">Current Weather</h1>
           <form class="flex flex-col items-center" method="GET">
             <label class="text-xl" for="search">Enter a Location</label>
             <div class="relative text-gray-600 focus-within:text-gray-400">
