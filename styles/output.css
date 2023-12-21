@@ -800,6 +800,14 @@ video {
   width: 1.25rem;
 }
 
+.max-w-screen-sm {
+  max-width: 640px;
+}
+
+.max-w-screen-2xl {
+  max-width: 1536px;
+}
+
 .flex-shrink {
   flex-shrink: 1;
 }
