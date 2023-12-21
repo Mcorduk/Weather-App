@@ -15,7 +15,27 @@
   >
     <!-- Container used for Displaying information -->
     <div class="container flex w-screen h-screen">
-      <aside class="flex flex-col w-1/2 h-screen"></aside>
+      <aside class="w-1/2 h-screen flex items-center justify-center">
+        <article class="flex flex-col items-center justify-center">
+          <h2 class="" id="city">Istanbul, TR</h2>
+          <h6 id="date">12/21/2023, 3:55:03 PM</h6>
+          <h1 id="temperature">13°C</h1>
+          <img
+            id="weather-icon"
+            src="./img/weather-icons/animated/cloudy-day-3.svg"
+          />
+          <h3 id="condition">Broken clouds</h3>
+          <section id="weather-details">
+            <div>
+              <h6>Feels like: 13°</h6>
+              <h6>Humidity levels: 76%</h6>
+            </div>
+            <div>
+              <h6>Wind: 1.54k/m</h6>
+            </div>
+          </section>
+        </article>
+      </aside>
 
       <!-- Container used for taking users Inputs -->
       <main class="w-1/2 h-screen flex items-center justify-center">
@@ -68,6 +88,16 @@
           >
             Celcius/Fahrenheit
           </div>
+          <section class="my-3">
+            <a
+              class="flex justify-center items-center gap-1 text-sm"
+              href="https://github.com/Mcorduk/Weather-App"
+              target="_blank"
+            >
+              Repository
+              <img class="w-5" src="./img/github-mark.svg" alt="github logo" />
+            </a>
+          </section>
         </article>
       </main>
     </div>
