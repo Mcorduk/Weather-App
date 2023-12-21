@@ -6,6 +6,7 @@ module.exports = {
     "./dist/*.js",
     "./dist/styles/*.css",
   ], // Update content paths
+  darkMode: "class",
   theme: {
     extend: {},
   },
