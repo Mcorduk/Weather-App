@@ -4,7 +4,11 @@
   "description": "",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write \"src/**/*.js\" \"src/**/*.css\"",
+    "watch:format": "npm run format -- --watch",
+    "build:tailwind": "tailwindcss -i ./src/input.css -o ./dist/styles/output.css",
+    "watch:tailwind": "npm run build:tailwind -- --watch"
   },
   "keywords": [],
   "author": "",
