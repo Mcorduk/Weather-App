@@ -16,7 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   fetchCurrentWeather: () => (/* binding */ fetchCurrentWeather)\n/* harmony export */ });\n// Hard coding API Key. Learning how to not do this is not covered yet, using free plan.\n\nasync function fetchCurrentWeather() {\n  const promise = await fetch(\"https://api.weatherapi.com/v1/current.json?key=e6f9f80a7ad94403a0d95411232112&q=london\", {\n    mode: \"cors\"\n  });\n  const dataJSon = await promise.json();\n  console.log(dataJSon);\n  const city = dataJSon.location.name;\n  console.log(city);\n  const {\n    country\n  } = dataJSon.location;\n  console.log(country);\n  const condition = dataJSon.current.condition.text;\n  console.log(condition);\n  const tempC = dataJSon.current.temp_c;\n  console.log(tempC);\n  const tempF = dataJSon.current.temp_f;\n  console.log(tempF);\n  const {\n    humidity\n  } = dataJSon.current;\n  console.log(humidity);\n  const feelsLikeC = dataJSon.current.feelslike_c;\n  console.log(feelsLikeC);\n  const feelsLikeF = dataJSon.current.feelslike_f;\n  console.log(feelsLikeF);\n  const wind = dataJSon.current.wind_kph;\n  console.log(wind);\n}\nfetchCurrentWeather();\n// `https://api.weatherapi.com/v1/current.json?key=e6f9f80a7ad94403a0d95411232112&q=${city}`\n\n\n\n//# sourceURL=webpack://webpack-template-repo/./src/fetch.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n// Hard coding API Key. Learning how to not do this is not covered yet, using free plan.\nconst city = document.getElementById(\"city\").innerHTML;\nconst date = document.getElementById(\"city\").innerHTML;\nasync function fetchCurrentWeather(location) {\n  const promise = await fetch(`https://api.weatherapi.com/v1/current.json?key=e6f9f80a7ad94403a0d95411232112&q=${location}`, {\n    mode: \"cors\"\n  });\n  const dataJSon = await promise.json();\n  console.log(dataJSon);\n  const city = dataJSon.location.name;\n  const {\n    country\n  } = dataJSon.location;\n  const condition = dataJSon.current.condition.text;\n  const tempC = dataJSon.current.temp_c;\n  const tempF = dataJSon.current.temp_f;\n  const {\n    humidity\n  } = dataJSon.current;\n  const feelsLikeC = dataJSon.current.feelslike_c;\n  const feelsLikeF = dataJSon.current.feelslike_f;\n  const wind = dataJSon.current.wind_kph;\n}\n\n// `https://api.weatherapi.com/v1/current.json?key=e6f9f80a7ad94403a0d95411232112&q=${city}`\n\nconst button = document.querySelector(\"button\");\nconst input = document.querySelector(\"input\");\nbutton.addEventListener(\"click\", () => {\n  fetchCurrentWeather(input.value);\n});\n\n\n//# sourceURL=webpack://webpack-template-repo/./src/fetch.js?");
 
 /***/ }),
 
@@ -57,23 +57,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _fet
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
