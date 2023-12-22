@@ -1,4 +1,3 @@
-import { doc } from "prettier";
 import fetchCurrentWeather from "./fetch";
 // DOM stuffs for Main HTML semantic tag where user input is
 
@@ -27,4 +26,5 @@ checkbox.addEventListener("change", () => {
   feelsLikeF.classList.toggle("hidden");
 });
 
-export {};
+export { };
+

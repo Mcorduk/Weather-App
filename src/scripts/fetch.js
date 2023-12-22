@@ -53,15 +53,13 @@ async function fetchCurrentWeather(location) {
     );
     // Turn data into JSON
     const weatherData = await response.json();
-    console.log(weatherData);
+
     // Refactor the data into a more readable object with needed data only.
     const refactoredWeatherData = refactorWeatherData(weatherData);
 
-    console.log(refactoredWeatherData);
     // Using render function from weatherInfoDOM module
     renderWeatherInfo(refactoredWeatherData);
     // Render the background depending on weather condition
-    console.log(refactoredWeatherData.icon);
     renderBackground(refactoredWeatherData.icon);
   } catch (error) {
     console.log(error);
