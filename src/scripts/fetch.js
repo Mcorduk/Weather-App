@@ -23,21 +23,27 @@ function extractWeatherIcon(iconUrl) {
 }
 
 function refactorWeatherData(weatherData) {
+  // FIXME Refactor all these variables and keep them in an object instead
+  // refactoredWeatherData = {
+    
+  // }
   const city = weatherData.location.name;
 
   const { country } = weatherData.location;
 
-  const condition = weatherData.current.condition.text;
+  const localDate = weatherData.localDate.localtime;
 
   const tempC = weatherData.current.temp_c;
 
   const tempF = weatherData.current.temp_f;
 
-  const { humidity } = weatherData.current;
+  const condition = weatherData.current.condition.text;
 
   const feelsLikeC = weatherData.current.feelslike_c;
 
   const feelsLikeF = weatherData.current.feelslike_f;
+
+  const { humidity } = weatherData.current;
 
   const wind = weatherData.current.wind_kph;
   // Pass icon url to regex function to get icon code from the API
@@ -46,12 +52,13 @@ function refactorWeatherData(weatherData) {
   return {
     city,
     country,
-    condition,
+    localDate,
     tempC,
     tempF,
-    humidity,
+    condition,
     feelsLikeC,
     feelsLikeF,
+    humidity,
     wind,
     icon,
   };
@@ -74,12 +81,9 @@ async function fetchCurrentWeather(location) {
 
     console.log(refactoredWeatherData);
     renderWeatherInfo(refactoredWeatherData);
-
   } catch (error) {
     console.log(error);
   }
-
-  
 }
 
 fetchCurrentWeather("singapore");

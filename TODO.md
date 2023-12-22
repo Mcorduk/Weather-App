@@ -6,3 +6,6 @@
 # FIXME
 
 # QOL
+  Form validation
+  Validation error text
+  

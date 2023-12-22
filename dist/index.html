@@ -20,9 +20,9 @@
           <h2 class="text-4xl my-5" id="location">
             <span id="city">Istanbul</span>, <span id="country">TR</span>
           </h2>
-          <h6 id="date">12/21/2023, 3:55:03 PM</h6>
+          <h6 id="local-date">12/21/2023, 3:55:03 PM</h6>
           <div class="flex gap-2" id="temp-and-icon">
-            <h1 class="text-4xl my-5" id="temperature">13°C</h1>
+            <h1 class="text-4xl my-5"><span id="temperature">13</span>°C</h1>
             <img
               class="shrink-0"
               id="weather-icon"
@@ -35,11 +35,11 @@
             id="weather-details"
           >
             <div class="flex gap-5">
-              <h6 id="feels-like">Feels like: 13°</h6>
-              <h6 id="humidity">Humidity levels: 76%</h6>
+              <h6>Feels like: <span id="feels-like">13</span>°C</h6>
+              <h6>Humidity levels: <span id="humidity">76</span>%</h6>
             </div>
             <div>
-              <h6 id="wind">Wind: 1.54k/m</h6>
+              <h6>Wind: <span id="wind">1.54</span> k/m</h6>
             </div>
           </section>
         </article>
@@ -49,6 +49,7 @@
       <main class="w-1/2 h-screen flex items-center justify-center">
         <article class="flex flex-col items-center justify-center">
           <h1 class="text-4xl my-5">Current Weather</h1>
+          <h6 id="date">12/21/2023, 3:55:03 PM</h6>
           <form class="flex flex-col items-center" method="GET">
             <label class="text-xl" for="search">Enter a Location</label>
             <div class="relative text-gray-600 focus-within:text-gray-400">
@@ -79,6 +80,7 @@
                 name="q"
                 class="py-2 text-sm text-white bg-gray-900 rounded-md pl-10 focus:outline-none focus:bg-white focus:text-gray-900"
                 placeholder="Search for a location..."
+                value=""
                 autocomplete="off"
               />
             </div>

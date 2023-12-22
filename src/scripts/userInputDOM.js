@@ -13,5 +13,4 @@ button.addEventListener("click", (event) => {
   input.value = "";
 });
 
-export { };
-
+export {};
