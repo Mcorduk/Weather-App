@@ -3,47 +3,53 @@ Learning how to not is not covered in Odin curriculum yet.
 But I am using Weather API's free plan so it is okay.
 */
 
-let weatherData;
-
 async function fetchCurrentWeather(location) {
-  const promise = await fetch(
-    `https://api.weatherapi.com/v1/current.json?key=e6f9f80a7ad94403a0d95411232112&q=${location}`,
-    { mode: "cors" },
-  );
-  const dataJSon = await promise.json();
-  console.log(dataJSon);
+  // Function to refactor the API responded JSON to usable object
+  function refactorWeatherData(weatherData) {
+    const city = weatherData.location.name;
 
-  const city = dataJSon.location.name;
+    const { country } = weatherData.location;
 
-  const { country } = dataJSon.location;
+    const condition = weatherData.current.condition.text;
 
-  const condition = dataJSon.current.condition.text;
+    const tempC = weatherData.current.temp_c;
 
-  const tempC = dataJSon.current.temp_c;
+    const tempF = weatherData.current.temp_f;
 
-  const tempF = dataJSon.current.temp_f;
+    const { humidity } = weatherData.current;
 
-  const { humidity } = dataJSon.current;
+    const feelsLikeC = weatherData.current.feelslike_c;
 
-  const feelsLikeC = dataJSon.current.feelslike_c;
+    const feelsLikeF = weatherData.current.feelslike_f;
 
-  const feelsLikeF = dataJSon.current.feelslike_f;
+    const wind = weatherData.current.wind_kph;
 
-  const wind = dataJSon.current.wind_kph;
+    return {
+      city,
+      country,
+      condition,
+      tempC,
+      tempF,
+      humidity,
+      feelsLikeC,
+      feelsLikeF,
+      wind,
+    };
+  }
+  try {
+    const response = await fetch(
+      `https://api.weatherapi.com/v1/current.json?key=e6f9f80a7ad94403a0d95411232112&q=${location}`,
+      { mode: "cors" },
+    );
 
-  weatherData = {
-    city,
-    country,
-    condition,
-    tempC,
-    tempF,
-    humidity,
-    feelsLikeC,
-    feelsLikeF,
-    wind,
-  };
+    const weatherData = await response.json();
 
-  console.log(weatherData);
+    const refactoredWeatherData = refactorWeatherData(weatherData);
+
+    console.log(refactoredWeatherData);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 fetchCurrentWeather("singapore");
