@@ -1,3 +1,66 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" xml:space="preserve" version="1.1" viewBox="0 0 64 64">
-    <image width="64" height="64" xlink:href="data:image/png;base64,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"/>
-  </svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (c) ammap.com | SVG weather icons -->
+<svg
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="64"
+    height="64"
+    viewbox="0 0 64 64">
+    <defs>
+        <filter id="blur" width="200%" height="200%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+            <feOffset dx="0" dy="4" result="offsetblur"/>
+            <feComponentTransfer>
+                <feFuncA type="linear" slope="0.05"/>
+            </feComponentTransfer>
+            <feMerge> 
+                <feMergeNode/>
+                <feMergeNode in="SourceGraphic"/> 
+            </feMerge>
+        </filter>
+        <style type="text/css"><![CDATA[
+/*
+** RAIN
+*/
+@keyframes am-weather-rain {
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -100;
+  }
+}
+
+.am-weather-rain-1 {
+  -webkit-animation-name: am-weather-rain;
+     -moz-animation-name: am-weather-rain;
+      -ms-animation-name: am-weather-rain;
+          animation-name: am-weather-rain;
+  -webkit-animation-duration: 8s;
+     -moz-animation-duration: 8s;
+      -ms-animation-duration: 8s;
+          animation-duration: 8s;
+  -webkit-animation-timing-function: linear;
+     -moz-animation-timing-function: linear;
+      -ms-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+     -moz-animation-iteration-count: infinite;
+      -ms-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+        ]]></style>
+    </defs>
+    <g filter="url(#blur)" id="rainy-4">
+        <g transform="translate(20,10)">
+            <g>
+                <path d="M47.7,35.4c0-4.6-3.7-8.2-8.2-8.2c-1,0-1.9,0.2-2.8,0.5c-0.3-3.4-3.1-6.2-6.6-6.2c-3.7,0-6.7,3-6.7,6.7c0,0.8,0.2,1.6,0.4,2.3    c-0.3-0.1-0.7-0.1-1-0.1c-3.7,0-6.7,3-6.7,6.7c0,3.6,2.9,6.6,6.5,6.7l17.2,0C44.2,43.3,47.7,39.8,47.7,35.4z" fill="#57A0EE" stroke="white" stroke-linejoin="round" stroke-width="1.2" transform="translate(-20,-11)"/>
+            </g>
+        </g>
+        <g transform="translate(37,45), rotate(10)">
+            <line class="am-weather-rain-1" fill="none" stroke="#91C0F8" stroke-dasharray="4,7" stroke-linecap="round" stroke-width="2" transform="translate(-6,1)" x1="0" x2="0" y1="0" y2="8" />
+        </g>
+    </g>
+</svg>
