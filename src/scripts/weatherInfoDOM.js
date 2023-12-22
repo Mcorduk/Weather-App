@@ -32,9 +32,14 @@ const renderLocalDate = ({ localDate }) => {
 };
 
 // Fahrenheit values will be used in a future state
-const renderTemps = ({ tempC, tempF, feelsLikeC, feelsLikeF }) => {
+const renderTempsCelcius = ({ tempC, feelsLikeC, }) => {
   setElementContent(weatherElements.temperature, tempC);
   setElementContent(weatherElements.feelsLike, feelsLikeC);
+};
+
+const renderTempsFahrenheit = ({ tempF, feelsLikeF }) => {
+  setElementContent(weatherElements.temperature, tempF);
+  setElementContent(weatherElements.feelsLike, feelsLikeF);
 };
 
 const renderWeatherCondition = ({ condition }) => {
@@ -58,8 +63,9 @@ function renderWeatherInfo(refactoredWeatherData) {
   renderWeatherLocation(refactoredWeatherData);
   // Local Date
   renderLocalDate(refactoredWeatherData);
-  // Temperatures and Feels Like in Celc and Fahrenheit
-  renderTemps(refactoredWeatherData);
+  // Temperatures and Feels Like in Celc
+  // Toggle to fahrenheit can be found in userinputDOM module
+  renderTempsCelcius(refactoredWeatherData);
   // Weather Icon
   renderWeatherIcon(refactoredWeatherData);
   // Weather Condition
@@ -68,4 +74,7 @@ function renderWeatherInfo(refactoredWeatherData) {
   renderWeatherDetails(refactoredWeatherData);
 }
 
-export default renderWeatherInfo;
+
+
+export { renderTempsFahrenheit, renderWeatherInfo };
+
