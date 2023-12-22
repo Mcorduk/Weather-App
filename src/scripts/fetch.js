@@ -1,3 +1,4 @@
+import renderBackground from "./renderImg";
 import { renderWeatherInfo } from "./weatherInfoDOM";
 /* Hard coding API Key. 
 Learning how to not is not covered in Odin curriculum yet.
@@ -59,6 +60,8 @@ async function fetchCurrentWeather(location) {
     console.log(refactoredWeatherData);
     // Using render function from weatherInfoDOM module
     renderWeatherInfo(refactoredWeatherData);
+    // Render the background depending on weather condition
+    renderBackground(refactorWeatherData.icon);
   } catch (error) {
     console.log(error);
   }

@@ -26,10 +26,9 @@ const renderWeatherLocation = ({ city, country }) => {
   setElementContent(weatherElements.city, city);
   if (country === "USA United States of America") {
     setElementContent(weatherElements.country, "USA");
-  }else {
+  } else {
     setElementContent(weatherElements.country, country);
   }
-  
 };
 
 const renderLocalDate = ({ localDate }) => {
