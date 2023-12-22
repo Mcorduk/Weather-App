@@ -1,5 +1,6 @@
 // Match API data with desired icons and background module
 
+// Object to match icon the background image name to be used
 const iconBgMap = {
   113: "sunny",
   116: "partly-cloudy",
@@ -51,15 +52,16 @@ const iconBgMap = {
   395: "snowy"
 };
 
+// Reassign body background css to reponse weather condition
 const changeBackground = (background) => {
   const body = document.querySelector("body");
 
   body.style.backgroundImage = `url('./img/backgrounds/${background}.jpg')`;
 };
 
-const renderBackground = (icon) => {
-
-    changeBackground(iconBgMap.icon);
+function renderBackground(icon) {
+    const background = iconBgMap[icon];
+    changeBackground(background);
 };
 
 export default renderBackground;
