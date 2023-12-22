@@ -39,10 +39,9 @@
 		"day" : "Patchy rain possible",
 		"night" : "Patchy rain possible",
 		"icon" : 176,
-		"bg":"rainy.jpg"
+		"bg": "rainy.jpg"
 	},
 	{
-		"code" : 1066,
 		"day" : "Patchy snow possible",
 		"night" : "Patchy snow possible",
 		"icon" : 179,
@@ -89,7 +88,7 @@
 		"night" : "Fog",
 		"icon" : 248,
 		"bg":"foggy.jpg"
-	}
+	},
 	{
 		"code" : 1147,
 		"day" : "Freezing fog",
