@@ -24,7 +24,10 @@ const setElementContent = (element, content) => {
 
 const renderWeatherLocation = ({ city, country }) => {
   setElementContent(weatherElements.city, city);
-  if (country === "USA United States of America") {
+  if (
+    country === "USA United States of America" ||
+    country === "United States of America"
+  ) {
     setElementContent(weatherElements.country, "USA");
   } else {
     setElementContent(weatherElements.country, country);

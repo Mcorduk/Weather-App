@@ -49,7 +49,7 @@ const iconBgMap = {
   386: "thunder",
   389: "thunder",
   392: "snowy",
-  395: "snowy"
+  395: "snowy",
 };
 
 // Reassign body background css to reponse weather condition
@@ -60,8 +60,8 @@ const changeBackground = (background) => {
 };
 
 function renderBackground(icon) {
-    const background = iconBgMap[icon];
-    changeBackground(background);
-};
+  const background = iconBgMap[icon];
+  changeBackground(background);
+}
 
 export default renderBackground;
