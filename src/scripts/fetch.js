@@ -73,10 +73,13 @@ async function fetchCurrentWeather(location) {
     const refactoredWeatherData = refactorWeatherData(weatherData);
 
     console.log(refactoredWeatherData);
+    renderWeatherInfo(refactoredWeatherData);
 
   } catch (error) {
     console.log(error);
   }
+
+  
 }
 
 fetchCurrentWeather("singapore");

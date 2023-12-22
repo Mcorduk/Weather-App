@@ -35,41 +35,48 @@ function getCurrentDateTime() {
   return formattedDate;
 }
 
-const renderWeatherLocation = () => {
-  weatherElements.city.innerHTML = refactoredWeatherData.city;
-  weatherElements.country.innerHTML = refactoredWeatherData.country;
+// Reusable function to set content to elements
+const setElementContent = (element, content) => {
+  element.innerHTML = content;
+};
+
+const renderWeatherLocation = ({city, country}) => {
+  setElementContent(weatherElements.city, city);
+  setElementContent(weatherElements.country, country);
 };
 
 const renderDate = () => {
   const currentDateTime = getCurrentDateTime();
-  weatherElements.date.innerHTML = currentDateTime;
+  setElementContent(weatherElements.date,currentDateTime);
 };
 
-const renderTemps = () => {
-  const tempCelcius = refactoredWeatherData.tempC;
-  const tempFahrenheit = refactoredWeatherData.tempF;
-  const feelsLikeCelcius = refactoredWeatherData.feelsLikeC;
-  const feelsLikeFahrenheit = refactoredWeatherData.feelsLikeF;
+// Fahrenheit values will be used in a future state
+const renderTemps = ({tempC, tempF, feelsLikeC, feelsLikeF}) => {
 
-  weatherElements.temperature.innerHTML = tempCelcius;
-  weatherElements.feelsLike.innerHTML = feelsLikeCelcius;
+  setElementContent(weatherElements.temperature, tempC);
+  setElementContent(weatherElements.feelsLike, feelsLikeC);
 };
 
-const renderWeatherDetails = () => {
-  weatherElements.humidity.innerHTML = refactoredWeatherData.humidity;
-  weatherElements.wind.innerHTML = refactoredWeatherData.wind;
+const renderWeatherDetails = ({humidity, wind}) => {
+  setElementContent(weatherElements.humidity, humidity);
+  setElementContent(weatherElements.wind, wind);
 };
+
+const renderWeatherIcon = (refactoredWeatherData) => {
+  weatherElements.weatherIcon.src = `./weather-icons/animated/${refactoredWeatherData.icon}.svg`;
+}; 
 
 function renderWeatherInfo(refactoredWeatherData) {
   // Location
-  renderWeatherLocation();
+  renderWeatherLocation(refactoredWeatherData);
   // Date
   renderDate();
   // Temperatures and Feels Like in Celc and Fahrenheit
-  renderTemps();
+  renderTemps(refactoredWeatherData);
   // Weather Details
-  renderWeatherDetails();
+  renderWeatherDetails(refactoredWeatherData);
   // Weather Icon
+  renderWeatherIcon(refactoredWeatherData);
 }
 
 export default renderWeatherInfo;
