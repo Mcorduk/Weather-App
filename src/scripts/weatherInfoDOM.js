@@ -24,7 +24,12 @@ const setElementContent = (element, content) => {
 
 const renderWeatherLocation = ({ city, country }) => {
   setElementContent(weatherElements.city, city);
-  setElementContent(weatherElements.country, country);
+  if (country === "USA United States of America") {
+    setElementContent(weatherElements.country, "USA");
+  }else {
+    setElementContent(weatherElements.country, country);
+  }
+  
 };
 
 const renderLocalDate = ({ localDate }) => {
@@ -32,7 +37,7 @@ const renderLocalDate = ({ localDate }) => {
 };
 
 // Fahrenheit values will be used in a future state
-const renderTempsCelcius = ({ tempC, feelsLikeC, }) => {
+const renderTempsCelcius = ({ tempC, feelsLikeC }) => {
   setElementContent(weatherElements.temperature, tempC);
   setElementContent(weatherElements.feelsLike, feelsLikeC);
 };
@@ -74,7 +79,4 @@ function renderWeatherInfo(refactoredWeatherData) {
   renderWeatherDetails(refactoredWeatherData);
 }
 
-
-
 export { renderTempsFahrenheit, renderWeatherInfo };
-

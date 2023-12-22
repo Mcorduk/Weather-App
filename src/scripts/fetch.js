@@ -20,8 +20,9 @@ function extractWeatherIcon(iconUrl) {
   }
   console.log("No regex match found for weather icon code");
   return 1;
-}renderWeatherInfo;
-// Create and return an object for only the values that I need from weather json 
+}
+
+// Create and return an object for only the values that I need from weather json
 function refactorWeatherData(weatherData) {
   const refactoredWeatherData = {
     city: weatherData.location.name,
@@ -58,7 +59,6 @@ async function fetchCurrentWeather(location) {
     console.log(refactoredWeatherData);
     // Using render function from weatherInfoDOM module
     renderWeatherInfo(refactoredWeatherData);
-
   } catch (error) {
     console.log(error);
   }

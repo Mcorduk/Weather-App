@@ -1,5 +1,5 @@
 import fetchCurrentWeather from "./fetch";
-import { renderTemps } from "./weatherInfoDOM";
+import { renderTempsFahrenheit } from "./weatherInfoDOM";
 // DOM stuffs for Main HTML semantic tag where user input is
 
 // User Input Search Box Listeners
@@ -13,13 +13,11 @@ button.addEventListener("click", (event) => {
   // Clear the input value
   input.value = "";
 });
-
 // User Toggle Celcius / Fahrenheit Listeners
 const checkbox = document.getElementById("toggle-temp");
 
 checkbox.addEventListener("change", () => {
-  renderTemps();
+  renderTempsFahrenheit();
 });
 
-export { };
-
+export {};
