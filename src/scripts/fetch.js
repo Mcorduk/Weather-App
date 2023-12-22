@@ -37,13 +37,14 @@ async function fetchCurrentWeather(location) {
     };
   }
   try {
+    // Fetch the response for current day's weather data from Weather API
     const response = await fetch(
       `https://api.weatherapi.com/v1/current.json?key=e6f9f80a7ad94403a0d95411232112&q=${location}`,
       { mode: "cors" },
     );
-
+    // Turn data into JSON
     const weatherData = await response.json();
-
+    // Refactor the data into a more readable object with needed data only.
     const refactoredWeatherData = refactorWeatherData(weatherData);
 
     console.log(refactoredWeatherData);
@@ -54,4 +55,4 @@ async function fetchCurrentWeather(location) {
 
 fetchCurrentWeather("singapore");
 
-export {};
+export default fetchCurrentWeather;
