@@ -12,7 +12,10 @@ const weatherElements = {
   wind: document.getElementById("wind"),
 };
 
+// Get Current Date info in following example format: 12/21/2023, 3:55:03 PM
 function getCurrentDateTime() {
+  // Define options for the Intl.DateTimeFormat
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat
   const options = {
     year: "numeric",
     month: "numeric",
@@ -23,9 +26,11 @@ function getCurrentDateTime() {
     hour12: true,
   };
 
+  // Create a new DateTimeFormat object with the specified options
   const formatter = new Intl.DateTimeFormat("en-US", options);
+  // Format the current date and time using the formatter
   const formattedDate = formatter.format(new Date());
-
+  // Return the formatted date and time
   return formattedDate;
 }
 
@@ -34,14 +39,12 @@ const renderWeatherLocation = () => {
   weatherElements.country.innerHTML = refactoredWeatherData.country;
 };
 
-function renderWeatherInfo(refactoredWeatherData) {
-  // Location
-  renderWeatherLocation();
-  // Date
+const renderDate = () => {
   const currentDateTime = getCurrentDateTime();
   weatherElements.date.innerHTML = currentDateTime;
+};
 
-  // Temperatures and Feels Like in Celc and Fahrenheit
+const renderTemps = () => {
   const tempCelcius = refactoredWeatherData.tempC;
   const tempFahrenheit = refactoredWeatherData.tempF;
   const feelsLikeCelcius = refactoredWeatherData.feelsLikeC;
@@ -49,11 +52,20 @@ function renderWeatherInfo(refactoredWeatherData) {
 
   weatherElements.temperature.innerHTML = tempCelcius;
   weatherElements.feelsLike.innerHTML = feelsLikeCelcius;
+};
+
+function renderWeatherInfo(refactoredWeatherData) {
+  // Location
+  renderWeatherLocation();
+  // Date
+  renderDate();
+
+  // Temperatures and Feels Like in Celc and Fahrenheit
+
   // Weather Details
   weatherElements.humidity.innerHTML = refactoredWeatherData.humidity;
   weatherElements.wind.innerHTML = refactoredWeatherData.wind;
   // Weather Icon
-
 }
 
 export default renderWeatherInfo;
