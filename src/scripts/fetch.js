@@ -1,3 +1,4 @@
+import renderWeatherInfo from "./weatherInfoDOM";
 /* Hard coding API Key. 
 Learning how to not is not covered in Odin curriculum yet.
 But I am using Weather API's free plan so it is okay.
@@ -72,6 +73,7 @@ async function fetchCurrentWeather(location) {
     const refactoredWeatherData = refactorWeatherData(weatherData);
 
     console.log(refactoredWeatherData);
+
   } catch (error) {
     console.log(error);
   }
