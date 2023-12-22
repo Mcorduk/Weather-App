@@ -10,23 +10,53 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/fetch.js":
-/*!**********************!*\
-  !*** ./src/fetch.js ***!
-  \**********************/
+/***/ "./src/scripts/DOM.js":
+/*!****************************!*\
+  !*** ./src/scripts/DOM.js ***!
+  \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n// Hard coding API Key. Learning how to not do this is not covered yet, using free plan.\nconst city = document.getElementById(\"city\").innerHTML;\nconst date = document.getElementById(\"city\").innerHTML;\nasync function fetchCurrentWeather(location) {\n  const promise = await fetch(`https://api.weatherapi.com/v1/current.json?key=e6f9f80a7ad94403a0d95411232112&q=${location}`, {\n    mode: \"cors\"\n  });\n  const dataJSon = await promise.json();\n  console.log(dataJSon);\n  const city = dataJSon.location.name;\n  const {\n    country\n  } = dataJSon.location;\n  const condition = dataJSon.current.condition.text;\n  const tempC = dataJSon.current.temp_c;\n  const tempF = dataJSon.current.temp_f;\n  const {\n    humidity\n  } = dataJSon.current;\n  const feelsLikeC = dataJSon.current.feelslike_c;\n  const feelsLikeF = dataJSon.current.feelslike_f;\n  const wind = dataJSon.current.wind_kph;\n}\n\n// `https://api.weatherapi.com/v1/current.json?key=e6f9f80a7ad94403a0d95411232112&q=${city}`\n\nconst button = document.querySelector(\"button\");\nconst input = document.querySelector(\"input\");\nbutton.addEventListener(\"click\", () => {\n  fetchCurrentWeather(input.value);\n});\n\n\n//# sourceURL=webpack://webpack-template-repo/./src/fetch.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n// DOM stuffs\n\nconst button = document.querySelector(\"button\");\nconst input = document.querySelector(\"input\");\nbutton.addEventListener(\"click\", () => {\n  // fetchCurrentWeather(input.value);\n});\n\n\n//# sourceURL=webpack://webpack-template-repo/./src/scripts/DOM.js?");
 
 /***/ }),
 
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
+/***/ "./src/scripts/fetch.js":
+/*!******************************!*\
+  !*** ./src/scripts/fetch.js ***!
+  \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _fetch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./fetch */ \"./src/fetch.js\");\n\n\n//# sourceURL=webpack://webpack-template-repo/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* Hard coding API Key. \nLearning how to not is not covered in Odin curriculum yet.\nBut I am using Weather API's free plan so it is okay.\n*/\n\nlet weatherData;\nasync function fetchCurrentWeather(location) {\n  const promise = await fetch(`https://api.weatherapi.com/v1/current.json?key=e6f9f80a7ad94403a0d95411232112&q=${location}`, {\n    mode: \"cors\"\n  });\n  const dataJSon = await promise.json();\n  console.log(dataJSon);\n  const city = dataJSon.location.name;\n  const {\n    country\n  } = dataJSon.location;\n  const condition = dataJSon.current.condition.text;\n  const tempC = dataJSon.current.temp_c;\n  const tempF = dataJSon.current.temp_f;\n  const {\n    humidity\n  } = dataJSon.current;\n  const feelsLikeC = dataJSon.current.feelslike_c;\n  const feelsLikeF = dataJSon.current.feelslike_f;\n  const wind = dataJSon.current.wind_kph;\n  weatherData = {\n    city,\n    country,\n    condition,\n    tempC,\n    tempF,\n    humidity,\n    feelsLikeC,\n    feelsLikeF,\n    wind\n  };\n  console.log(weatherData);\n}\nfetchCurrentWeather(\"singapore\");\n\n\n//# sourceURL=webpack://webpack-template-repo/./src/scripts/fetch.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/index.js":
+/*!******************************!*\
+  !*** ./src/scripts/index.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _DOM__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DOM */ \"./src/scripts/DOM.js\");\n/* harmony import */ var _fetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./fetch */ \"./src/scripts/fetch.js\");\n/* harmony import */ var _renderImg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./renderImg */ \"./src/scripts/renderImg.js\");\n/* harmony import */ var _theme__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./theme */ \"./src/scripts/theme.js\");\n\n\n\n\n\n//# sourceURL=webpack://webpack-template-repo/./src/scripts/index.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/renderImg.js":
+/*!**********************************!*\
+  !*** ./src/scripts/renderImg.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n// Match API data with desired icons and background module\n\n\n\n//# sourceURL=webpack://webpack-template-repo/./src/scripts/renderImg.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/theme.js":
+/*!******************************!*\
+  !*** ./src/scripts/theme.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n// Dark - Light Theme Toggle Module\n\n\n\n//# sourceURL=webpack://webpack-template-repo/./src/scripts/theme.js?");
 
 /***/ })
 
@@ -73,7 +103,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _fet
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/scripts/index.js");
 /******/ 	
 /******/ })()
 ;
