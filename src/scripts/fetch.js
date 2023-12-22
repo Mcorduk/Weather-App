@@ -13,6 +13,7 @@ function extractWeatherIcon(iconUrl){
   const match = inputString.match(regex);
 
   if (match) {
+    // Get second index of the match method because we need the group (\d{3})
     const weatherIconCode = match[1];
     return weatherIconCode;
   } 
@@ -39,8 +40,8 @@ function refactorWeatherData(weatherData) {
   const feelsLikeF = weatherData.current.feelslike_f;
 
   const wind = weatherData.current.wind_kph;
-
-  const {icon} = weatherData.current;
+  // Pass icon url to regex function to get icon code from the API 
+  const icon = extractWeatherIcon(weatherData.current.condition.icon);
 
   return {
     city,

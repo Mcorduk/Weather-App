@@ -29,10 +29,14 @@ function getCurrentDateTime() {
   return formattedDate;
 }
 
-function renderWeatherInfo(refactoredWeatherData) {
-  // Location
+const renderWeatherLocation = () => {
   weatherElements.city.innerHTML = refactoredWeatherData.city;
   weatherElements.country.innerHTML = refactoredWeatherData.country;
+};
+
+function renderWeatherInfo(refactoredWeatherData) {
+  // Location
+  renderWeatherLocation();
   // Date
   const currentDateTime = getCurrentDateTime();
   weatherElements.date.innerHTML = currentDateTime;
@@ -48,6 +52,8 @@ function renderWeatherInfo(refactoredWeatherData) {
   // Weather Details
   weatherElements.humidity.innerHTML = refactoredWeatherData.humidity;
   weatherElements.wind.innerHTML = refactoredWeatherData.wind;
+  // Weather Icon
+
 }
 
 export default renderWeatherInfo;
