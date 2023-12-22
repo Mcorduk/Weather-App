@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\nObject(function webpackMissingModule() { var e = new Error(\"Cannot find module './DOM'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n/* harmony import */ var _fetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./fetch */ \"./src/scripts/fetch.js\");\n/* harmony import */ var _renderImg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./renderImg */ \"./src/scripts/renderImg.js\");\n/* harmony import */ var _theme__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./theme */ \"./src/scripts/theme.js\");\n\n\n\n\n\n//# sourceURL=webpack://webpack-template-repo/./src/scripts/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _fetch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./fetch */ \"./src/scripts/fetch.js\");\n/* harmony import */ var _renderImg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./renderImg */ \"./src/scripts/renderImg.js\");\n/* harmony import */ var _theme__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./theme */ \"./src/scripts/theme.js\");\n/* harmony import */ var _userInputDOM__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./userInputDOM */ \"./src/scripts/userInputDOM.js\");\n\n\n\n\n\n//# sourceURL=webpack://webpack-template-repo/./src/scripts/index.js?");
 
 /***/ }),
 
@@ -47,6 +47,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n// Match API data with desire
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n// Dark - Light Theme Toggle Module\n\n\n\n//# sourceURL=webpack://webpack-template-repo/./src/scripts/theme.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/userInputDOM.js":
+/*!*************************************!*\
+  !*** ./src/scripts/userInputDOM.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _fetch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./fetch */ \"./src/scripts/fetch.js\");\n\n// DOM stuffs for Main HTML semantic tag where user input is\n\n// User Input DOM\nconst button = document.querySelector(\"button\");\nconst input = document.querySelector(\"input\");\nbutton.addEventListener(\"click\", () => {\n  (0,_fetch__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(input.value);\n  input.value = \"\";\n});\n\n\n//# sourceURL=webpack://webpack-template-repo/./src/scripts/userInputDOM.js?");
 
 /***/ })
 
