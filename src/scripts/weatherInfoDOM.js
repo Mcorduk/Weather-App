@@ -27,8 +27,8 @@ const renderWeatherLocation = ({ city, country }) => {
   setElementContent(weatherElements.country, country);
 };
 
-const renderLocalDate = ({localDate}) => {
-  setElementContent(weatherElements.localDate,localDate);
+const renderLocalDate = ({ localDate }) => {
+  setElementContent(weatherElements.localDate, localDate);
 };
 
 // Fahrenheit values will be used in a future state

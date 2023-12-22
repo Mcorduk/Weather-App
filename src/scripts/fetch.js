@@ -22,46 +22,23 @@ function extractWeatherIcon(iconUrl) {
   return 1;
 }
 
+// Create and return an object for only the values that I need from weather json 
 function refactorWeatherData(weatherData) {
-  // FIXME Refactor all these variables and keep them in an object instead
-  // refactoredWeatherData = {
-    
-  // }
-  const city = weatherData.location.name;
-
-  const { country } = weatherData.location;
-
-  const localDate = weatherData.location.localtime;
-
-  const tempC = weatherData.current.temp_c;
-
-  const tempF = weatherData.current.temp_f;
-
-  const condition = weatherData.current.condition.text;
-
-  const feelsLikeC = weatherData.current.feelslike_c;
-
-  const feelsLikeF = weatherData.current.feelslike_f;
-
-  const { humidity } = weatherData.current;
-
-  const wind = weatherData.current.wind_kph;
-  // Pass icon url to regex function to get icon code from the API
-  const icon = extractWeatherIcon(weatherData.current.condition.icon);
-
-  return {
-    city,
-    country,
-    localDate,
-    tempC,
-    tempF,
-    condition,
-    feelsLikeC,
-    feelsLikeF,
-    humidity,
-    wind,
-    icon,
+  const refactoredWeatherData = {
+    city: weatherData.location.name,
+    country: weatherData.location.country,
+    localDate: weatherData.location.localtime,
+    tempC: weatherData.current.temp_c,
+    tempF: weatherData.current.temp_f,
+    condition: weatherData.current.condition.text,
+    feelsLikeC: weatherData.current.feelslike_c,
+    feelsLikeF: weatherData.current.feelslike_f,
+    humidity: weatherData.current.humidity,
+    wind: weatherData.current.wind_kph,
+    icon: extractWeatherIcon(weatherData.current.condition.icon),
   };
+
+  return refactoredWeatherData;
 }
 
 async function fetchCurrentWeather(location) {
