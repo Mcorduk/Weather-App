@@ -33,6 +33,7 @@ const renderWeatherLocation = ({ city, country }) => {
     setElementContent(weatherElements.country, "USA");
   } else if (country === "Singapore"){
     setElementContent(weatherElements.country, "Lovely Oni's Home");
+    document.getElementById("country").style.textShadow = "2px 2px 2px  purple";
   }
     else {
     setElementContent(weatherElements.country, country);
