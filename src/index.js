@@ -1,2 +1,1 @@
-import { } from "./fetch";
-
+import {} from "./fetch";
