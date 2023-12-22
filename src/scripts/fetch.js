@@ -61,7 +61,8 @@ async function fetchCurrentWeather(location) {
     // Using render function from weatherInfoDOM module
     renderWeatherInfo(refactoredWeatherData);
     // Render the background depending on weather condition
-    renderBackground(refactorWeatherData.icon);
+    console.log(refactoredWeatherData.icon);
+    renderBackground(refactoredWeatherData.icon);
   } catch (error) {
     console.log(error);
   }
