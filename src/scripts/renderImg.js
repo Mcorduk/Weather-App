@@ -1,32 +1,55 @@
 // Match API data with desired icons and background module
 
-// Fetch JSON with background image
-function fetchData() {
-  return fetch("./weather-conditions.json")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      console.log(response);
-      return response; // Assuming the data is already in JSON format
-    })
-    .catch((error) => {
-      console.error("Error loading JSON file:", error);
-      // Optionally, you can throw the error or handle it as needed
-      throw error;
-    });
-}
-
-// Function to get the "bg" value based on the icon number
-function getBgByIcon(icon, weatherData) {
-  // Find the object in the array that matches the given icon number
-  const matchingObject = weatherData.find(
-    (weatherCondition) => weatherCondition.icon === icon,
-  );
-
-  // If a matching object is found, return its "bg" property; otherwise, return null
-  return matchingObject ? matchingObject.bg : null;
-}
+const iconBgMap = {
+  113: "sunny",
+  116: "partly-cloudy",
+  119: "cloudy",
+  122: "cloudy",
+  143: "foggy",
+  176: "rainy",
+  179: "snowy",
+  182: "rainy",
+  185: "rainy",
+  200: "thunder",
+  227: "snowy",
+  230: "snowy",
+  248: "foggy",
+  260: "foggy",
+  263: "rainy",
+  266: "rainy",
+  281: "rainy",
+  284: "rainy",
+  293: "rainy",
+  296: "rainy",
+  299: "rainy",
+  302: "rainy",
+  305: "rainy",
+  308: "rainy",
+  311: "rainy",
+  314: "rainy",
+  317: "rainy",
+  320: "rainy",
+  323: "snowy",
+  326: "snowy",
+  329: "snowy",
+  332: "snowy",
+  335: "snowy",
+  338: "snowy",
+  350: "snowy",
+  353: "rainy",
+  356: "rainy",
+  359: "rainy",
+  362: "rainy",
+  365: "rainy",
+  368: "snowy",
+  371: "snowy",
+  374: "snowy",
+  377: "snowy",
+  386: "thunder",
+  389: "thunder",
+  392: "snowy",
+  395: "snowy"
+};
 
 const changeBackground = (background) => {
   const body = document.querySelector("body");
@@ -35,10 +58,8 @@ const changeBackground = (background) => {
 };
 
 const renderBackground = (icon) => {
-  fetchData().then((weatherData) => {
-    const bgValue = getBgByIcon(icon, weatherData);
-    changeBackground(bgValue);
-  });
+
+    changeBackground(iconBgMap.icon);
 };
 
 export default renderBackground;
