@@ -5,4 +5,4 @@ import { } from "./userInputDOM";
 import { } from "./weatherInfoDOM";
 
 // Default city for the initial load
-fetchCurrentWeather("Singapore");
+fetchCurrentWeather("Istanbul");
