@@ -31,6 +31,7 @@ function getCurrentDateTime() {
   // Format the current date and time using the formatter
   const formattedDate = formatter.format(new Date());
   // Return the formatted date and time
+
   return formattedDate;
 }
 
@@ -54,17 +55,20 @@ const renderTemps = () => {
   weatherElements.feelsLike.innerHTML = feelsLikeCelcius;
 };
 
+const renderWeatherDetails = () => {
+  weatherElements.humidity.innerHTML = refactoredWeatherData.humidity;
+  weatherElements.wind.innerHTML = refactoredWeatherData.wind;
+};
+
 function renderWeatherInfo(refactoredWeatherData) {
   // Location
   renderWeatherLocation();
   // Date
   renderDate();
-
   // Temperatures and Feels Like in Celc and Fahrenheit
-
+  renderTemps();
   // Weather Details
-  weatherElements.humidity.innerHTML = refactoredWeatherData.humidity;
-  weatherElements.wind.innerHTML = refactoredWeatherData.wind;
+  renderWeatherDetails();
   // Weather Icon
 }
 
