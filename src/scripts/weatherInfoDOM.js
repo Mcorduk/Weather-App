@@ -13,29 +13,6 @@ const weatherElements = {
   wind: document.getElementById("wind"),
 };
 
-// Get Current Date info in following example format: 12/21/2023, 3:55:03 PM
-function getCurrentDateTime() {
-  // Define options for the Intl.DateTimeFormat
-  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat
-  const options = {
-    year: "numeric",
-    month: "numeric",
-    day: "numeric",
-    hour: "numeric",
-    minute: "numeric",
-    second: "numeric",
-    hour12: true,
-  };
-
-  // Create a new DateTimeFormat object with the specified options
-  const formatter = new Intl.DateTimeFormat("en-US", options);
-  // Format the current date and time using the formatter
-  const formattedDate = formatter.format(new Date());
-  // Return the formatted date and time
-
-  return formattedDate;
-}
-
 function capitalizeFirstLetters(str) {
   return str.replace(/\b\w/g, (match) => match.toUpperCase());
 }
@@ -50,7 +27,9 @@ const renderWeatherLocation = ({ city, country }) => {
   setElementContent(weatherElements.country, country);
 };
 
-const renderLocalDate = ({}) => {};
+const renderLocalDate = ({localDate}) => {
+  setElementContent(weatherElements.localDate,localDate);
+};
 
 // Fahrenheit values will be used in a future state
 const renderTemps = ({ tempC, tempF, feelsLikeC, feelsLikeF }) => {
@@ -74,18 +53,10 @@ const renderWeatherIcon = (refactoredWeatherData) => {
   weatherElements.weatherIcon.src = `./img/weather-icons/animated/${refactoredWeatherData.icon}.svg`;
 };
 
-// Not to be confused with the date in Aside. This is used for Input form date
-const renderCurrentDate = () => {
-  const currentDateTime = getCurrentDateTime();
-  setElementContent(weatherElements.date, currentDateTime);
-};
-
 function renderWeatherInfo(refactoredWeatherData) {
   // Location
   renderWeatherLocation(refactoredWeatherData);
-  // Input form Date
-  renderCurrentDate();
-  // Local date of Requested Location
+  // Local Date
   renderLocalDate(refactoredWeatherData);
   // Temperatures and Feels Like in Celc and Fahrenheit
   renderTemps(refactoredWeatherData);

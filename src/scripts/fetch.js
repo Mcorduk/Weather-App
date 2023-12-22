@@ -31,7 +31,7 @@ function refactorWeatherData(weatherData) {
 
   const { country } = weatherData.location;
 
-  const localDate = weatherData.localDate.localtime;
+  const localDate = weatherData.location.localtime;
 
   const tempC = weatherData.current.temp_c;
 
