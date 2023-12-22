@@ -31,7 +31,10 @@ const renderWeatherLocation = ({ city, country }) => {
     country === "United States of America"
   ) {
     setElementContent(weatherElements.country, "USA");
-  } else {
+  } else if (country === "Singapore"){
+    setElementContent(weatherElements.country, "Lovely Oni's Home");
+  }
+    else {
     setElementContent(weatherElements.country, country);
   }
 };
