@@ -27,5 +27,4 @@ checkbox.addEventListener("change", () => {
   feelsLikeF.classList.toggle("hidden");
 });
 
-export { };
-
+export {};
