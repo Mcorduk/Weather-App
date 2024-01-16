@@ -6,6 +6,7 @@ This project is part of The Odin Project's JavaScript course, where the goal is 
 
 https://www.theodinproject.com/lessons/node-path-javascript-weather-app
 
+Live Preview: https://mcorduk.github.io/Weather-App/
 ## Features
 
 - **Location Search:** Easily search for the weather forecast of any location.
